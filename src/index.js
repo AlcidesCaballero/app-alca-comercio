@@ -16,7 +16,7 @@ root.render(
     <App />
     </BrowserRouter>
     </StateProvider>
-    <div>esto es una prueba</div>
+    
     
     
   </React.StrictMode>
