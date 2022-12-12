@@ -1,6 +1,6 @@
 import React from 'react'
 import accounting from 'accounting';
-import { Button, ListItemSecondaryAction } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { getBasketTotal } from '../reducer';
 import { useStateValue } from './StateProvider';

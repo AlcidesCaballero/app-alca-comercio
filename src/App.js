@@ -3,6 +3,7 @@ import CheckoutPage from './components/CheckoutPage';
 import Navbar from './components/Navbar';
 import Products from './components/Products';
 import { Routes, Route } from 'react-router-dom';
+import SignIn from './components/SignIn';
 
 
 
@@ -12,7 +13,8 @@ function App() {
     
     <div className="App">
       <Navbar />
-      <Routes>        
+      <Routes>  
+      <Route path="signin" element={ <SignIn />} />      
       <Route path="/" element={ <Products />} />
       <Route path="CheckoutPage" element={ <CheckoutPage /> } />      
       </Routes> 

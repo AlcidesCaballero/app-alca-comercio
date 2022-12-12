@@ -60,9 +60,11 @@ export default function Navbar() {
 
             </Typography>
             <div className={classes.Button}>
+            <Link to="/signin">
             <Button variant="outlined">
-                <strong> Login </strong>
+                <strong> SIGN IN </strong>
             </Button>
+            </Link>
             
             <Link to="CheckoutPage">
             <IconButton aria-label='show cart items' color='inherit'>

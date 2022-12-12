@@ -43,11 +43,11 @@ export default function CheckoutCard({product:{id, name, productType, image, pri
     const classes = useStyles();    
     const [expanded, setExpanded] = React.useState(false);
     const [{basket}, dispatch] = useStateValue();
-
+    
     const handleExpandClick = () => {
     setExpanded(!expanded);
     };
-
+        
     const removeItem = () => dispatch({
         type: actionTypes.REMOVE_ITEM,
         id: id,
