@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState} from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +12,9 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import { Link as RouteLink, unstable_HistoryRouter } from 'react-router-dom';
+import { auth } from '../firebase';
+
 
 function Copyright() {
     return (
@@ -38,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
     },
     form: {
-    width: '100%', // Fix IE 11 issue.
+    width: '100%', 
     marginTop: theme.spacing(1),
     },
     submit: {
@@ -48,6 +51,16 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn() {
     const classes = useStyles();
+    const [email, setEmail] = useState(" ");
+    const [password, setPassword] = useState(" ");
+    const history = unstable_HistoryRouter();
+    
+    const SignIn = (e) => {
+        e.preventDafault();
+        auth.createUserWithEmailAndPassword(email, password).then((auth)=>
+            history.push("/"))                  
+            .catch(err=>alert(err.message))
+    }
 
     return (
     <Container component="main" maxWidth="xs">
@@ -63,6 +76,10 @@ export default function SignIn() {
         </Typography>
         <form className={classes.form} noValidate>
         <TextField
+
+            value={email}
+            onChange={e=>setEmail(e.target.value)}
+
             variant="outlined"
             margin="normal"
             required
@@ -73,7 +90,12 @@ export default function SignIn() {
             autoComplete="email"
             autoFocus
             />
+
             <TextField
+            
+            value={password}
+            onChange={e=>setPassword(e.target.value)}
+
             variant="outlined"
             margin="normal"
             required
@@ -88,15 +110,20 @@ export default function SignIn() {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
             />
+
             <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
+
+            onClick={SignIn}
+
             >
             Sign In
             </Button>
+
             <Grid container>
             <Grid item xs>
             <Link href="#" variant="body2">
@@ -104,9 +131,11 @@ export default function SignIn() {
             </Link>
             </Grid>
             <Grid item>
-            <Link href="#" variant="body2">
+
+            <RouteLink to="signup">
                 {"Don't have an account? Sign Up"}
-            </Link>
+            </RouteLink>
+                
             </Grid>
             </Grid>
         </form>
