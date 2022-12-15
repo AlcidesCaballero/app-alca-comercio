@@ -15,6 +15,7 @@ import { useStateValue } from "./StateProvider";
 
 
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
     flexGrow: 1,
@@ -60,7 +61,7 @@ export default function Navbar() {
 
             </Typography>
             <div className={classes.Button}>
-            <Link to="/signin">
+            <Link to="signin">
             <Button variant="outlined">
                 <strong> SIGN IN </strong>
             </Button>
