@@ -11,7 +11,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { Link, unstable_HistoryRouter } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 
 
@@ -53,7 +53,7 @@ export default function SignIn() {
     const classes = useStyles();
     const [email, setEmail] = useState(" ");
     const [password, setPassword] = useState(" ");
-    const history = unstable_HistoryRouter();
+    const history = useNavigate();
     
     const SignIn = (e) => {
         e.preventDafault();
@@ -132,7 +132,7 @@ export default function SignIn() {
             </Grid>
             <Grid item>
 
-            <Link to="signup">
+            <Link to="SignUp">
                 {"Don't have an account? Sign Up"}
             </Link>
                 

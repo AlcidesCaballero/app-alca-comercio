@@ -60,8 +60,9 @@ export default function Navbar() {
             Hello Guest
 
             </Typography>
+            
             <div className={classes.Button}>
-            <Link to="signin">
+            <Link to="/signin">
             <Button variant="outlined">
                 <strong> SIGN IN </strong>
             </Button>

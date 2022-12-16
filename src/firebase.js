@@ -2,6 +2,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyD7jis6MDQp-hSn4ZFww1R1slXTIg2Cvx0",
     authDomain: "app-alca-comercio.firebaseapp.com",
@@ -11,8 +12,9 @@ const firebaseConfig = {
     appId: "1:822170363918:web:e004b7e9f62ab9d974b45f"
     };
 
-    const firebaseApp = firebase.initializeApp(firebaseConfig)
-    const auth = firebase.auth()
+    const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-export {auth}
+    const auth = firebase.auth();
+
+export {auth, firebaseApp}
 
