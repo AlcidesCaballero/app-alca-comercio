@@ -1,12 +1,10 @@
 import './App.css';
 import CheckoutPage from './components/CheckoutPage';
-
 import Products from './components/Products';
 import { Routes, Route } from 'react-router-dom';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Layout from './components/Layout';
-
 
 
 

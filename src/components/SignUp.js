@@ -77,7 +77,7 @@ export default function SignUp() {
             <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-            Sign up
+            Registrarse
         </Typography>
         <form className={classes.form} noValidate>
             <Grid container spacing={2}>
@@ -89,7 +89,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 id="firstName"
-                label="First Name"
+                label="Nombre"
                 autoFocus
                 />
             </Grid>
@@ -100,7 +100,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 id="lastName"
-                label="Last Name"
+                label="Apellido"
                 name="lastName"
                 autoComplete="lname"
                 />
@@ -114,7 +114,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                label="Correo Electrónico"
                 name="email"
                 autoComplete="email"
                 />
@@ -128,7 +128,7 @@ export default function SignUp() {
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                label="Contraseña"
                 type="password"
                 id="password"
                 autoComplete="current-password"
@@ -138,7 +138,7 @@ export default function SignUp() {
             <Grid item xs={12}>
                 <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
+                label="Deseo recibir información y promociones vía correo electrónico"
                 />
             </Grid>
             </Grid>
@@ -154,14 +154,14 @@ export default function SignUp() {
             
             >
 
-            Sign Up
+            Crear Cuenta
 
             </Button>
             
             <Grid container justifyContent="flex-end">
             <Grid item>
             <Link to="SignIn">
-                {"Already have an account? Sign in"}
+                {"¿Ya tienes una cuenta? Iniciar sesión"}
             </Link>
             </Grid>
             </Grid>
